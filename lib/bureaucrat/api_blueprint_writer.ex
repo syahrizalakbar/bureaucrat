@@ -198,7 +198,6 @@ defmodule Bureaucrat.ApiBlueprintWriter do
     Regex.run(~r/#{prefix}(.+)/, module, capture: :all_but_first)
     |> List.first()
     |> String.trim("Controller")
-    |> Inflex.pluralize()
   end
 
   defp group_records(records) do

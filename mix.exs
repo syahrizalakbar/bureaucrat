@@ -32,10 +32,9 @@ defmodule Bureaucrat.Mixfile do
   defp deps do
     [
       {:plug, ">= 1.0.0"},
-      {:poison, "~> 1.5 or ~> 2.0 or ~> 3.0 or ~> 4.0 or ~> 5.0", optional: true},
+      {:poison, "~> 6.0"},
       {:phoenix, ">= 1.2.0", optional: true},
-      {:ex_doc, "~> 0.19", only: :dev},
-      {:inflex, ">= 1.10.0"}
+      {:ex_doc, "~> 0.19", only: :dev}
     ]
   end
 
