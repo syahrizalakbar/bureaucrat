@@ -101,11 +101,12 @@ defmodule Bureaucrat.Helpers do
   end
 
   defmacro doc(conn, opts) when is_list(opts) do
-    # __CALLER__returns a `Macro.Env` struct
-    #   -> https://hexdocs.pm/elixir/Macro.Env.html
     mod = __CALLER__.module
-    fun = __CALLER__.function |> elem(0) |> to_string
-    # full path as binary
+    fun =
+      case __CALLER__.function do
+        {name, _arity} -> to_string(name)
+        nil -> "unknown_function"
+      end
     file = __CALLER__.file
     line = __CALLER__.line
 
